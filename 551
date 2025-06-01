@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education Categories</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: white;
+    }
+    header {
+      background-color: #f0f0f0;
+      padding: 1em;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2em;
+      font-size: 1.2em;
+    }
+    nav a {
+      text-decoration: none;
+      color: #333;
+      cursor: pointer;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .content {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1em;
+      padding: 2em;
+    }
+    .box {
+      width: 150px;
+      height: auto;
+      background-color: #e0e0e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      font-weight: bold;
+      padding: 1em;
+      cursor: pointer;
+    }
+    .subfields {
+      display: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5em;
+      padding: 1em;
+    }
+    .subfield-box {
+      width: 120px;
+      height: 80px;
+      background-color: #d0e8ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      color: blue;
+      font-size: 0.85em;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+  <script>
+    function showStemFields() {
+      document.getElementById('stem-fields').style.display = 'flex';
+      document.querySelectorAll('.subfields').forEach(el => el.style.display = 'none');
+      document.getElementById('humanities-fields').style.display = 'none';
+      document.getElementById('medicine-fields').style.display = 'none';
+      document.getElementById('trades-fields').style.display = 'none';
+    }
+    function showHumanitiesFields() {
+      document.getElementById('humanities-fields').style.display = 'flex';
+      document.querySelectorAll('.subfields').forEach(el => el.style.display = 'none');
+      document.getElementById('stem-fields').style.display = 'none';
+      document.getElementById('medicine-fields').style.display = 'none';
+      document.getElementById('trades-fields').style.display = 'none';
+    }
+    function showMedicineFields() {
+      document.getElementById('medicine-fields').style.display = 'flex';
+      document.querySelectorAll('.subfields').forEach(el => el.style.display = 'none');
+      document.getElementById('stem-fields').style.display = 'none';
+      document.getElementById('humanities-fields').style.display = 'none';
+      document.getElementById('trades-fields').style.display = 'none';
+    }
+    function showTradesFields() {
+      document.getElementById('trades-fields').style.display = 'flex';
+      document.querySelectorAll('.subfields').forEach(el => el.style.display = 'none');
+      document.getElementById('stem-fields').style.display = 'none';
+      document.getElementById('humanities-fields').style.display = 'none';
+      document.getElementById('medicine-fields').style.display = 'none';
+    }
+    function toggleSubfields(id) {
+      document.querySelectorAll('.subfields').forEach(el => el.style.display = 'none');
+      const subfieldEl = document.getElementById(id);
+      subfieldEl.style.display = 'flex';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <a onclick="showStemFields()">STEM</a>
+      <a onclick="showHumanitiesFields()">Humanities</a>
+      <a onclick="showMedicineFields()">Medicine</a>
+      <a onclick="showTradesFields()">Trades</a>
+    </nav>
+  </header>
+
+  <div id="stem-fields" class="content">
+    <div class="box" onclick="toggleSubfields('physics-subfields')">Physics</div>
+    <div class="box" onclick="toggleSubfields('chemistry-subfields')">Chemistry</div>
+    <div class="box" onclick="toggleSubfields('biology-subfields')">Biology</div>
+    <div class="box" onclick="toggleSubfields('mathematics-subfields')">Mathematics</div>
+    <div class="box" onclick="toggleSubfields('cs-subfields')">Computer Science</div>
+    <div class="box" onclick="toggleSubfields('engineering-subfields')">Engineering</div>
+    <div class="box" onclick="toggleSubfields('astronomy-subfields')">Astronomy</div>
+    <div class="box" onclick="toggleSubfields('envscience-subfields')">Environmental Science</div>
+    <div class="box" onclick="toggleSubfields('geology-subfields')">Geology</div>
+    <div class="box" onclick="toggleSubfields('robotics-subfields')">Robotics</div>
+  </div>
+
+  <!-- Existing fields -->
+  <div id="humanities-fields" class="content">
+  <div class="box" onclick="toggleSubfields('history-subfields')">History</div>
+  <div class="box" onclick="toggleSubfields('philosophy-subfields')">Philosophy</div>
+  <div class="box" onclick="toggleSubfields('literature-subfields')">Literature</div>
+  <div class="box" onclick="toggleSubfields('linguistics-subfields')">Linguistics</div>
+  <div class="box" onclick="toggleSubfields('arthistory-subfields')">Art History</div>
+  <div class="box" onclick="toggleSubfields('religion-subfields')">Religious Studies</div>
+  <div class="box" onclick="toggleSubfields('cultural-subfields')">Cultural Studies</div>
+  <div class="box" onclick="toggleSubfields('classics-subfields')">Classics</div>
+  <div class="box" onclick="toggleSubfields('theater-subfields')">Theater</div>
+  <div class="box" onclick="toggleSubfields('musicology-subfields')">Musicology</div>
+</div>
+
+<div id="history-subfields" class="subfields">
+  <div class="subfield-box">Ancient</div>
+  <div class="subfield-box">Medieval</div>
+  <div class="subfield-box">Modern</div>
+  <div class="subfield-box">World</div>
+  <div class="subfield-box">American</div>
+  <div class="subfield-box">European</div>
+  <div class="subfield-box">Military</div>
+  <div class="subfield-box">Social</div>
+  <div class="subfield-box">Economic</div>
+  <div class="subfield-box">Cultural</div>
+</div>
+<div id="philosophy-subfields" class="subfields">
+  <div class="subfield-box">Ethics</div>
+  <div class="subfield-box">Logic</div>
+  <div class="subfield-box">Epistemology</div>
+  <div class="subfield-box">Metaphysics</div>
+  <div class="subfield-box">Aesthetics</div>
+  <div class="subfield-box">Political</div>
+  <div class="subfield-box">Analytic</div>
+  <div class="subfield-box">Continental</div>
+  <div class="subfield-box">Philosophy of Mind</div>
+  <div class="subfield-box">Philosophy of Science</div>
+</div>
+<div id="literature-subfields" class="subfields">
+  <div class="subfield-box">Classical</div>
+  <div class="subfield-box">Medieval</div>
+  <div class="subfield-box">Renaissance</div>
+  <div class="subfield-box">Romantic</div>
+  <div class="subfield-box">Victorian</div>
+  <div class="subfield-box">Modernist</div>
+  <div class="subfield-box">Postmodern</div>
+  <div class="subfield-box">Comparative</div>
+  <div class="subfield-box">World</div>
+  <div class="subfield-box">Genre Studies</div>
+</div>
+<div id="linguistics-subfields" class="subfields">
+  <div class="subfield-box">Phonetics</div>
+  <div class="subfield-box">Phonology</div>
+  <div class="subfield-box">Morphology</div>
+  <div class="subfield-box">Syntax</div>
+  <div class="subfield-box">Semantics</div>
+  <div class="subfield-box">Pragmatics</div>
+  <div class="subfield-box">Sociolinguistics</div>
+  <div class="subfield-box">Psycholinguistics</div>
+  <div class="subfield-box">Computational</div>
+  <div class="subfield-box">Historical</div>
+</div>
+<div id="arthistory-subfields" class="subfields">
+  <div class="subfield-box">Ancient</div>
+  <div class="subfield-box">Medieval</div>
+  <div class="subfield-box">Renaissance</div>
+  <div class="subfield-box">Baroque</div>
+  <div class="subfield-box">Modern</div>
+  <div class="subfield-box">Contemporary</div>
+  <div class="subfield-box">Asian</div>
+  <div class="subfield-box">Islamic</div>
+  <div class="subfield-box">African</div>
+  <div class="subfield-box">American</div>
+</div>
+<div id="religion-subfields" class="subfields">
+  <div class="subfield-box">Theology</div>
+  <div class="subfield-box">Comparative</div>
+  <div class="subfield-box">Eastern</div>
+  <div class="subfield-box">Western</div>
+  <div class="subfield-box">Biblical Studies</div>
+  <div class="subfield-box">Mythology</div>
+  <div class="subfield-box">Ethics</div>
+  <div class="subfield-box">Philosophy of Religion</div>
+  <div class="subfield-box">Sociology of Religion</div>
+  <div class="subfield-box">History of Religion</div>
+</div>
+<div id="cultural-subfields" class="subfields">
+  <div class="subfield-box">Gender Studies</div>
+  <div class="subfield-box">Media Studies</div>
+  <div class="subfield-box">Popular Culture</div>
+  <div class="subfield-box">Postcolonial</div>
+  <div class="subfield-box">Critical Theory</div>
+  <div class="subfield-box">Ethnic Studies</div>
+  <div class="subfield-box">Globalization</div>
+  <div class="subfield-box">Visual Culture</div>
+  <div class="subfield-box">Identity</div>
+  <div class="subfield-box">Subcultures</div>
+</div>
+<div id="classics-subfields" class="subfields">
+  <div class="subfield-box">Greek</div>
+  <div class="subfield-box">Latin</div>
+  <div class="subfield-box">Ancient History</div>
+  <div class="subfield-box">Archaeology</div>
+  <div class="subfield-box">Mythology</div>
+  <div class="subfield-box">Philosophy</div>
+  <div class="subfield-box">Literature</div>
+  <div class="subfield-box">Art</div>
+  <div class="subfield-box">Culture</div>
+  <div class="subfield-box">Epigraphy</div>
+</div>
+<div id="theater-subfields" class="subfields">
+  <div class="subfield-box">Acting</div>
+  <div class="subfield-box">Directing</div>
+  <div class="subfield-box">Playwriting</div>
+  <div class="subfield-box">Stage Design</div>
+  <div class="subfield-box">Dramatic Theory</div>
+  <div class="subfield-box">Theater History</div>
+  <div class="subfield-box">Performance Studies</div>
+  <div class="subfield-box">Musical Theater</div>
+  <div class="subfield-box">Puppetry</div>
+  <div class="subfield-box">Improvisation</div>
+</div>
+<div id="musicology-subfields" class="subfields">
+  <div class="subfield-box">Historical</div>
+  <div class="subfield-box">Ethnomusicology</div>
+  <div class="subfield-box">Theory</div>
+  <div class="subfield-box">Analysis</div>
+  <div class="subfield-box">Performance Practice</div>
+  <div class="subfield-box">Notation</div>
+  <div class="subfield-box">Genres</div>
+  <div class="subfield-box">Composers</div>
+  <div class="subfield-box">Instruments</div>
+  <div class="subfield-box">Reception</div>
+</div>
+  <div id="medicine-fields" class="content">
+  <div class="box" onclick="toggleSubfields('anatomy-subfields')">Anatomy</div>
+  <div class="box" onclick="toggleSubfields('physiology-subfields')">Physiology</div>
+  <div class="box" onclick="toggleSubfields('pathology-subfields')">Pathology</div>
+  <div class="box" onclick="toggleSubfields('pharmacology-subfields')">Pharmacology</div>
+  <div class="box" onclick="toggleSubfields('surgery-subfields')">Surgery</div>
+  <div class="box" onclick="toggleSubfields('pediatrics-subfields')">Pediatrics</div>
+  <div class="box" onclick="toggleSubfields('psychiatry-subfields')">Psychiatry</div>
+  <div class="box" onclick="toggleSubfields('internalmed-subfields')">Internal Medicine</div>
+  <div class="box" onclick="toggleSubfields('radiology-subfields')">Radiology</div>
+  <div class="box" onclick="toggleSubfields('emergencymed-subfields')">Emergency Medicine</div>
+</div>
+
+<div id="anatomy-subfields" class="subfields">
+  <div class="subfield-box">Gross</div>
+  <div class="subfield-box">Microscopic</div>
+  <div class="subfield-box">Neuroanatomy</div>
+  <div class="subfield-box">Developmental</div>
+  <div class="subfield-box">Comparative</div>
+  <div class="subfield-box">Functional</div>
+  <div class="subfield-box">Topographic</div>
+  <div class="subfield-box">Surgical</div>
+  <div class="subfield-box">Radiologic</div>
+  <div class="subfield-box">Clinical</div>
+</div>
+<div id="physiology-subfields" class="subfields">
+  <div class="subfield-box">Cell</div>
+  <div class="subfield-box">Neurophysiology</div>
+  <div class="subfield-box">Cardiovascular</div>
+  <div class="subfield-box">Respiratory</div>
+  <div class="subfield-box">Renal</div>
+  <div class="subfield-box">Gastrointestinal</div>
+  <div class="subfield-box">Endocrine</div>
+  <div class="subfield-box">Reproductive</div>
+  <div class="subfield-box">Muscle</div>
+  <div class="subfield-box">Integrative</div>
+</div>
+<div id="pathology-subfields" class="subfields">
+  <div class="subfield-box">General</div>
+  <div class="subfield-box">Systemic</div>
+  <div class="subfield-box">Clinical</div>
+  <div class="subfield-box">Forensic</div>
+  <div class="subfield-box">Molecular</div>
+  <div class="subfield-box">Cytopathology</div>
+  <div class="subfield-box">Histopathology</div>
+  <div class="subfield-box">Hematopathology</div>
+  <div class="subfield-box">Neuropathology</div>
+  <div class="subfield-box">Immunopathology</div>
+</div>
+<div id="pharmacology-subfields" class="subfields">
+  <div class="subfield-box">Clinical</div>
+  <div class="subfield-box">Molecular</div>
+  <div class="subfield-box">Neuro</div>
+  <div class="subfield-box">Cardiovascular</div>
+  <div class="subfield-box">Toxicology</div>
+  <div class="subfield-box">Pharmacokinetics</div>
+  <div class="subfield-box">Pharmacodynamics</div>
+  <div class="subfield-box">Chemotherapy</div>
+  <div class="subfield-box">Endocrine</div>
+  <div class="subfield-box">Drug Development</div>
+</div>
+<div id="surgery-subfields" class="subfields">
+  <div class="subfield-box">General</div>
+  <div class="subfield-box">Cardiothoracic</div>
+  <div class="subfield-box">Neurosurgery</div>
+  <div class="subfield-box">Orthopedic</div>
+  <div class="subfield-box">Plastic</div>
+  <div class="subfield-box">Vascular</div>
+  <div class="subfield-box">Trauma</div>
+  <div class="subfield-box">Pediatric</div>
+  <div class="subfield-box">Oncology</div>
+  <div class="subfield-box">Transplant</div>
+</div>
+<div id="pediatrics-subfields" class="subfields">
+  <div class="subfield-box">Neonatology</div>
+  <div class="subfield-box">Adolescent</div>
+  <div class="subfield-box">Pediatric Cardiology</div>
+  <div class="subfield-box">Pediatric Endocrinology</div>
+  <div class="subfield-box">Pediatric Gastroenterology</div>
+  <div class="subfield-box">Pediatric Hematology</div>
+  <div class="subfield-box">Pediatric Oncology</div>
+  <div class="subfield-box">Pediatric Neurology</div>
+  <div class="subfield-box">Pediatric Nephrology</div>
+  <div class="subfield-box">Pediatric Pulmonology</div>
+</div>
+<div id="psychiatry-subfields" class="subfields">
+  <div class="subfield-box">Child</div>
+  <div class="subfield-box">Adult</div>
+  <div class="subfield-box">Geriatric</div>
+  <div class="subfield-box">Forensic</div>
+  <div class="subfield-box">Addiction</div>
+  <div class="subfield-box">Neuropsychiatry</div>
+  <div class="subfield-box">Emergency</div>
+  <div class="subfield-box">Consultation-Liaison</div>
+  <div class="subfield-box">Mood Disorders</div>
+  <div class="subfield-box">Anxiety Disorders</div>
+</div>
+<div id="internalmed-subfields" class="subfields">
+  <div class="subfield-box">Cardiology</div>
+  <div class="subfield-box">Endocrinology</div>
+  <div class="subfield-box">Gastroenterology</div>
+  <div class="subfield-box">Hematology</div>
+  <div class="subfield-box">Infectious Disease</div>
+  <div class="subfield-box">Nephrology</div>
+  <div class="subfield-box">Oncology</div>
+  <div class="subfield-box">Pulmonology</div>
+  <div class="subfield-box">Rheumatology</div>
+  <div class="subfield-box">Geriatrics</div>
+</div>
+<div id="radiology-subfields" class="subfields">
+  <div class="subfield-box">Diagnostic</div>
+  <div class="subfield-box">Interventional</div>
+  <div class="subfield-box">Neuroradiology</div>
+  <div class="subfield-box">Pediatric</div>
+  <div class="subfield-box">Musculoskeletal</div>
+  <div class="subfield-box">Breast</div>
+  <div class="subfield-box">Nuclear Medicine</div>
+  <div class="subfield-box">Cardiac</div>
+  <div class="subfield-box">Thoracic</div>
+  <div class="subfield-box">Abdominal</div>
+</div>
+<div id="emergencymed-subfields" class="subfields">
+  <div class="subfield-box">Trauma</div>
+  <div class="subfield-box">Pediatric</div>
+  <div class="subfield-box">Toxicology</div>
+  <div class="subfield-box">Disaster Medicine</div>
+  <div class="subfield-box">Critical Care</div>
+  <div class="subfield-box">Prehospital</div>
+  <div class="subfield-box">Resuscitation</div>
+  <div class="subfield-box">Ultrasound</div>
+  <div class="subfield-box">Environmental</div>
+  <div class="subfield-box">Geriatric</div>
+</div>
+  <div id="trades-fields" class="content">
+  <div class="box" onclick="toggleSubfields('carpentry-subfields')">Carpentry</div>
+  <div class="box" onclick="toggleSubfields('plumbing-subfields')">Plumbing</div>
+  <div class="box" onclick="toggleSubfields('electrical-subfields')">Electrical</div>
+  <div class="box" onclick="toggleSubfields('welding-subfields')">Welding</div>
+  <div class="box" onclick="toggleSubfields('hvac-subfields')">HVAC</div>
+  <div class="box" onclick="toggleSubfields('automotive-subfields')">Automotive</div>
+  <div class="box" onclick="toggleSubfields('masonry-subfields')">Masonry</div>
+  <div class="box" onclick="toggleSubfields('machining-subfields')">Machining</div>
+  <div class="box" onclick="toggleSubfields('painting-subfields')">Painting</div>
+  <div class="box" onclick="toggleSubfields('roofing-subfields')">Roofing</div>
+</div>
+
+<div id="carpentry-subfields" class="subfields">
+  <div class="subfield-box">Framing</div>
+  <div class="subfield-box">Trim</div>
+  <div class="subfield-box">Cabinetry</div>
+  <div class="subfield-box">Roofing</div>
+  <div class="subfield-box">Stairs</div>
+  <div class="subfield-box">Flooring</div>
+  <div class="subfield-box">Drywall</div>
+  <div class="subfield-box">Insulation</div>
+  <div class="subfield-box">Decking</div>
+  <div class="subfield-box">Doors & Windows</div>
+</div>
+<div id="plumbing-subfields" class="subfields">
+  <div class="subfield-box">Residential</div>
+  <div class="subfield-box">Commercial</div>
+  <div class="subfield-box">Water Supply</div>
+  <div class="subfield-box">Drainage</div>
+  <div class="subfield-box">Gas Fitting</div>
+  <div class="subfield-box">Irrigation</div>
+  <div class="subfield-box">Backflow Prevention</div>
+  <div class="subfield-box">Septic Systems</div>
+  <div class="subfield-box">Sewer Lines</div>
+  <div class="subfield-box">Pipefitting</div>
+</div>
+<div id="electrical-subfields" class="subfields">
+  <div class="subfield-box">Residential</div>
+  <div class="subfield-box">Commercial</div>
+  <div class="subfield-box">Industrial</div>
+  <div class="subfield-box">Low Voltage</div>
+  <div class="subfield-box">Solar</div>
+  <div class="subfield-box">Wiring</div>
+  <div class="subfield-box">Lighting</div>
+  <div class="subfield-box">Control Systems</div>
+  <div class="subfield-box">Fire Alarms</div>
+  <div class="subfield-box">Generators</div>
+</div>
+<div id="welding-subfields" class="subfields">
+  <div class="subfield-box">MIG</div>
+  <div class="subfield-box">TIG</div>
+  <div class="subfield-box">Stick</div>
+  <div class="subfield-box">Flux Core</div>
+  <div class="subfield-box">Pipe Welding</div>
+  <div class="subfield-box">Structural</div>
+  <div class="subfield-box">Fabrication</div>
+  <div class="subfield-box">Blueprint Reading</div>
+  <div class="subfield-box">Welding Safety</div>
+  <div class="subfield-box">Welding Inspection</div>
+</div>
+<div id="hvac-subfields" class="subfields">
+  <div class="subfield-box">Heating</div>
+  <div class="subfield-box">Cooling</div>
+  <div class="subfield-box">Ventilation</div>
+  <div class="subfield-box">Refrigeration</div>
+  <div class="subfield-box">Controls</div>
+  <div class="subfield-box">Thermostats</div>
+  <div class="subfield-box">Ductwork</div>
+  <div class="subfield-box">System Design</div>
+  <div class="subfield-box">Maintenance</div>
+  <div class="subfield-box">Installation</div>
+</div>
+<div id="automotive-subfields" class="subfields">
+  <div class="subfield-box">Engines</div>
+  <div class="subfield-box">Brakes</div>
+  <div class="subfield-box">Transmissions</div>
+  <div class="subfield-box">Suspension</div>
+  <div class="subfield-box">Diagnostics</div>
+  <div class="subfield-box">Electrical Systems</div>
+  <div class="subfield-box">Hybrid</div>
+  <div class="subfield-box">Air Conditioning</div>
+  <div class="subfield-box">Safety Systems</div>
+  <div class="subfield-box">Maintenance</div>
+</div>
+<div id="masonry-subfields" class="subfields">
+  <div class="subfield-box">Bricklaying</div>
+  <div class="subfield-box">Stonework</div>
+  <div class="subfield-box">Blockwork</div>
+  <div class="subfield-box">Fireplaces</div>
+  <div class="subfield-box">Foundations</div>
+  <div class="subfield-box">Chimneys</div>
+  <div class="subfield-box">Concrete</div>
+  <div class="subfield-box">Repair</div>
+  <div class="subfield-box">Tuckpointing</div>
+  <div class="subfield-box">Restoration</div>
+</div>
+<div id="machining-subfields" class="subfields">
+  <div class="subfield-box">CNC</div>
+  <div class="subfield-box">Lathe</div>
+  <div class="subfield-box">Milling</div>
+  <div class="subfield-box">Grinding</div>
+  <div class="subfield-box">Tooling</div>
+  <div class="subfield-box">Inspection</div>
+  <div class="subfield-box">Programming</div>
+  <div class="subfield-box">Blueprint Reading</div>
+  <div class="subfield-box">Production</div>
+  <div class="subfield-box">Maintenance</div>
+</div>
+<div id="painting-subfields" class="subfields">
+  <div class="subfield-box">Interior</div>
+  <div class="subfield-box">Exterior</div>
+  <div class="subfield-box">Commercial</div>
+  <div class="subfield-box">Residential</div>
+  <div class="subfield-box">Spray</div>
+  <div class="subfield-box">Roller</div>
+  <div class="subfield-box">Brush</div>
+  <div class="subfield-box">Prep</div>
+  <div class="subfield-box">Finishing</div>
+  <div class="subfield-box">Safety</div>
+</div>
+<div id="roofing-subfields" class="subfields">
+  <div class="subfield-box">Shingles</div>
+  <div class="subfield-box">Metal</div>
+  <div class="subfield-box">Tile</div>
+  <div class="subfield-box">Flat Roof</div>
+  <div class="subfield-box">Inspections</div>
+  <div class="subfield-box">Waterproofing</div>
+  <div class="subfield-box">Repairs</div>
+  <div class="subfield-box">Installation</div>
+  <div class="subfield-box">Gutters</div>
+  <div class="subfield-box">Ventilation</div>
+</div>
+
+  <!-- STEM Subfields -->
+  <div id="physics-subfields" class="subfields">
+    <div class="subfield-box">Quantum Mechanics</div>
+    <div class="subfield-box">Thermodynamics</div>
+    <div class="subfield-box">Electromagnetism</div>
+    <div class="subfield-box">Optics</div>
+    <div class="subfield-box">Mechanics</div>
+    <div class="subfield-box">Nuclear Physics</div>
+    <div class="subfield-box">Acoustics</div>
+    <div class="subfield-box">Astrophysics</div>
+    <div class="subfield-box">Particle Physics</div>
+    <div class="subfield-box">Relativity</div>
+  </div>
+  <div id="chemistry-subfields" class="subfields">
+    <div class="subfield-box">Organic Chemistry</div>
+    <div class="subfield-box">Inorganic Chemistry</div>
+    <div class="subfield-box">Physical Chemistry</div>
+    <div class="subfield-box">Analytical Chemistry</div>
+    <div class="subfield-box">Biochemistry</div>
+    <div class="subfield-box">Theoretical Chemistry</div>
+    <div class="subfield-box">Nuclear Chemistry</div>
+    <div class="subfield-box">Environmental Chemistry</div>
+    <div class="subfield-box">Industrial Chemistry</div>
+    <div class="subfield-box">Materials Chemistry</div>
+  </div>
+  <div id="biology-subfields" class="subfields">
+    <div class="subfield-box">Botany</div>
+    <div class="subfield-box">Zoology</div>
+    <div class="subfield-box">Genetics</div>
+    <div class="subfield-box">Microbiology</div>
+    <div class="subfield-box">Biotechnology</div>
+    <div class="subfield-box">Cell Biology</div>
+    <div class="subfield-box">Evolutionary Biology</div>
+    <div class="subfield-box">Neuroscience</div>
+    <div class="subfield-box">Ecology</div>
+    <div class="subfield-box">Immunology</div>
+  </div>
+  <div id="mathematics-subfields" class="subfields">
+    <div class="subfield-box">Algebra</div>
+    <div class="subfield-box">Calculus</div>
+    <div class="subfield-box">Statistics</div>
+    <div class="subfield-box">Geometry</div>
+    <div class="subfield-box">Number Theory</div>
+    <div class="subfield-box">Topology</div>
+    <div class="subfield-box">Mathematical Logic</div>
+    <div class="subfield-box">Differential Equations</div>
+    <div class="subfield-box">Discrete Math</div>
+    <div class="subfield-box">Linear Algebra</div>
+  </div>
+  <div id="cs-subfields" class="subfields">
+    <div class="subfield-box">Algorithms</div>
+    <div class="subfield-box">Data Structures</div>
+    <div class="subfield-box">Artificial Intelligence</div>
+    <div class="subfield-box">Databases</div>
+    <div class="subfield-box">Computer Graphics</div>
+    <div class="subfield-box">Cybersecurity</div>
+    <div class="subfield-box">Networking</div>
+    <div class="subfield-box">Operating Systems</div>
+    <div class="subfield-box">Web Development</div>
+    <div class="subfield-box">Software Engineering</div>
+  </div>
+  <div id="engineering-subfields" class="subfields">
+    <div class="subfield-box">Mechanical</div>
+    <div class="subfield-box">Electrical</div>
+    <div class="subfield-box">Civil</div>
+    <div class="subfield-box">Chemical</div>
+    <div class="subfield-box">Biomedical</div>
+    <div class="subfield-box">Aerospace</div>
+    <div class="subfield-box">Industrial</div>
+    <div class="subfield-box">Materials</div>
+    <div class="subfield-box">Nuclear</div>
+    <div class="subfield-box">Environmental</div>
+  </div>
+  <div id="astronomy-subfields" class="subfields">
+    <div class="subfield-box">Stellar</div>
+    <div class="subfield-box">Planetary</div>
+    <div class="subfield-box">Galactic</div>
+    <div class="subfield-box">Cosmology</div>
+    <div class="subfield-box">Radio Astronomy</div>
+    <div class="subfield-box">Infrared Astronomy</div>
+    <div class="subfield-box">Optical Astronomy</div>
+    <div class="subfield-box">X-ray Astronomy</div>
+    <div class="subfield-box">Astrobiology</div>
+    <div class="subfield-box">Exoplanetology</div>
+  </div>
+  <div id="envscience-subfields" class="subfields">
+    <div class="subfield-box">Climate Science</div>
+    <div class="subfield-box">Ecology</div>
+    <div class="subfield-box">Geochemistry</div>
+    <div class="subfield-box">Hydrology</div>
+    <div class="subfield-box">Soil Science</div>
+    <div class="subfield-box">Atmospheric Science</div>
+    <div class="subfield-box">Oceanography</div>
+    <div class="subfield-box">Environmental Engineering</div>
+    <div class="subfield-box">Toxicology</div>
+    <div class="subfield-box">Conservation Biology</div>
+  </div>
+  <div id="geology-subfields" class="subfields">
+    <div class="subfield-box">Mineralogy</div>
+    <div class="subfield-box">Petrology</div>
+    <div class="subfield-box">Geophysics</div>
+    <div class="subfield-box">Paleontology</div>
+    <div class="subfield-box">Seismology</div>
+    <div class="subfield-box">Volcanology</div>
+    <div class="subfield-box">Structural Geology</div>
+    <div class="subfield-box">Geomorphology</div>
+    <div class="subfield-box">Sedimentology</div>
+    <div class="subfield-box">Geochronology</div>
+  </div>
+  <div id="robotics-subfields" class="subfields">
+    <div class="subfield-box">Control Systems</div>
+    <div class="subfield-box">Mechatronics</div>
+    <div class="subfield-box">Automation</div>
+    <div class="subfield-box">Sensors</div>
+    <div class="subfield-box">Machine Learning</div>
+    <div class="subfield-box">Robot Kinematics</div>
+    <div class="subfield-box">Embedded Systems</div>
+    <div class="subfield-box">Computer Vision</div>
+    <div class="subfield-box">Human-Robot Interaction</div>
+    <div class="subfield-box">Swarm Robotics</div>
+  </div>
+</body>
+</html>
